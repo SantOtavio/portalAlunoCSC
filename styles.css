@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #811021;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+}
+
+header .logo {
+    height: 50px;
+}
+
+header .user-info {
+    display: flex;
+    align-items: center;
+}
+
+header .user-info span {
+    margin-right: 10px;
+}
+
+header .user-info .user-photo {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.sub-header {
+    background-color: #A63445;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 10px;
+}
+
+#sidebarToggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+}
+
+.sub-header h1 {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+}
+
+aside {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: none;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside ul li {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+#calendar {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
