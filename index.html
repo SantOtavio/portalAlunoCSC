@@ -11,28 +11,33 @@
         <img src="logo.png" alt="Logo da Faculdade" class="logo">
         <div class="user-info">
             <span>Nome do Usuário</span>
-            <img src="user.jpg" alt="Foto do Usuário" class="user-photo">
+            <img src="user.png" alt="Foto do Usuário" class="user-photo">
         </div>
     </header>
     <div class="sub-header">
-        <button id="sidebarToggle">☰</button>
+        <button id="openMenuBtn">Abrir Menu</button>
         <h1>Quadro de Horário</h1>
     </div>
     <div class="container">
         <aside id="sidebar">
             <ul>
-                <li>Mural</li>
-                <li>Quadro de Horários</li>
-                <li>Grade Curricular</li>
-                <li>Central do Aluno</li>
+                <li><a href="#" class="day-option">Segunda-feira</a></li>
+                <hr class="linha" />
+                <li><a href="#" class="day-option">Terça-feira</a></li>
+                <hr class="linha" />
+                <li><a href="#" class="day-option">Quarta-feira</a></li>
+                <hr class="linha" />
+                <li><a href="#" class="day-option">Quinta-feira</a></li>
+                <hr class="linha" />
+                <li><a href="#" class="day-option">Sexta-feira</a></li>
             </ul>
         </aside>
         <main>
-            <div id="calendar">
-                <!-- Calendário será inserido aqui -->
+            <div id="scheduleContainer">
+                <!-- Aqui será inserido o conteúdo do horário -->
             </div>
         </main>
     </div>
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

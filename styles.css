@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
 
 header {
@@ -13,7 +14,7 @@ header {
 }
 
 header .logo {
-    height: 50px;
+    height: 40px;
 }
 
 header .user-info {
@@ -26,8 +27,8 @@ header .user-info span {
 }
 
 header .user-info .user-photo {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
 }
 
@@ -37,55 +38,159 @@ header .user-info .user-photo {
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
     font-size: 10px;
 }
 
-#sidebarToggle {
-    background: none;
-    border: none;
+#openMenuBtn {
+    background-color: #811021;
     color: white;
-    font-size: 3rem;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-    position: absolute;
-    left: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.sub-header h1 {
-    margin: 0;
+#openMenuBtn:hover {
+    background-color: #9c2532;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 aside {
-    width: 200px;
+    width: 100%;
     background-color: #f4f4f4;
     padding: 20px;
     display: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 aside ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 aside ul li {
-    padding: 10px 0;
-    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+aside ul li a:hover {
+    background-color: #ddd;
 }
 
 main {
-    flex-grow: 1;
     padding: 20px;
-}
-
-#calendar {
     background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+#scheduleContainer {
+    margin-top: 20px;
+}
+
+.schedule-info {
+    margin-top: 20px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.schedule-table th,
+.schedule-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.schedule-table th {
+    background-color: #f2f2f2;
+}
+
+.detail-btn {
+    background-color: transparent;
+    color: #811021;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.detail-btn:hover {
+    background-color: #9c2532;
+    color: white;
+    text-decoration: underline;
+}
+
+#sidebar {
+    position: absolute;
+    background-color: #a63445;
+    width: fit-content;
+    z-index: 999;
+}
+
+.day-option {
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .schedule-table th, .schedule-table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .schedule-table thead {
+        display: none;
+    }
+
+    .schedule-table tbody tr {
+        margin-bottom: 10px;
+        display: block;
+        border: 1px solid black;
+    }
+
+    .schedule-table td {
+        text-align: center;
+        position: relative;
+    }
+
+    .schedule-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
 }
