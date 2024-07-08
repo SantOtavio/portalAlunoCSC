@@ -154,6 +154,7 @@ main {
     position: absolute;
     background-color: #a63445;
     width: fit-content;
+z-index: 999;
 }
 
 .day-option {
