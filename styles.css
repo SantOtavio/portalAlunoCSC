@@ -154,7 +154,6 @@ main {
     position: absolute;
     background-color: #a63445;
     width: fit-content;
-    z-index: 999;
 }
 
 .day-option {
@@ -163,34 +162,36 @@ main {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .schedule-table th, .schedule-table td {
+    .schedule-table, .schedule-table thead, .schedule-table tbody, .schedule-table th, .schedule-table td, .schedule-table tr {
         display: block;
-        width: 100%;
-        box-sizing: border-box;
     }
 
-    .schedule-table thead {
-        display: none;
+    .schedule-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
     }
 
-    .schedule-table tbody tr {
-        margin-bottom: 10px;
-        display: block;
-        border: 1px solid black;
+    .schedule-table tr {
+        border: 1px solid #ccc;
+        margin-bottom: 5px;
     }
 
     .schedule-table td {
-        text-align: center;
+        border: none;
+        border-bottom: 1px solid #eee;
         position: relative;
+        padding-left: 50%;
+        text-align: left;
     }
 
-    .schedule-table td::before {
+    .schedule-table td:before {
         content: attr(data-label);
         position: absolute;
         left: 0;
         width: 50%;
         padding-left: 15px;
         font-weight: bold;
-        text-align: left;
+        white-space: nowrap;
     }
 }
